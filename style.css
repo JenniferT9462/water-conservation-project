@@ -1,0 +1,24 @@
+.main-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.main-container p {
+  font-size: 0.95rem;
+  margin: 0 15px;
+}
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+.btn-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
