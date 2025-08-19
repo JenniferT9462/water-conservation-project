@@ -28,7 +28,7 @@ This guide shows how to create a simple multi-page site that teaches water conse
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
         />
-* Link Bootstrap JS at the bottom of the <body>:
+* Link Bootstrap JS at the bottom of the body:
     ```html
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -60,7 +60,7 @@ This guide shows how to create a simple multi-page site that teaches water conse
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
         />
-* Link Bootstrap JS at the bottom of the <body>:
+* Link Bootstrap JS at the bottom of the body:
     ```html
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -100,7 +100,7 @@ This guide shows how to create a simple multi-page site that teaches water conse
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
         />
-* Link Bootstrap JS at the bottom of the <body>:
+* Link Bootstrap JS at the bottom of the body:
     ```html
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
