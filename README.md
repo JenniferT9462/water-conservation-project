@@ -33,6 +33,12 @@ This guide shows how to create a simple multi-page site that teaches water conse
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 * Add a container with a heading, a short intro paragraph, and a home image (`water-glass.jpg`).
+    - Add a container for all content: 
+    ```html
+    <div class="container-fluid p-5" style="max-width: 400px;">
+    <!-- Paragraphs, images and buttons -->
+    </div>
+    ```
     - Add language buttons and a **Next** button linking to `faucet.html`.
 * We want to put our elements in "row" and "col" to position elements. 
     - Example for information text: 
@@ -64,6 +70,12 @@ This guide shows how to create a simple multi-page site that teaches water conse
     ```html
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+* Add a container for all content: 
+    ```html
+    <div class="container-fluid p-5" style="max-width: 400px;">
+    <!-- Paragraph, image and buttons -->
+    </div>
+    ```
 * Add a paragraph explaining refillable vs single-use bottles.
 * Add two bottle images (`glass-bottle.png` and `plastic-bottle.png`).
 * Add a faucet image (`faucet.png`).
@@ -104,6 +116,12 @@ This guide shows how to create a simple multi-page site that teaches water conse
     ```html
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+* Add a container for all content: 
+    ```html
+    <div class="container-fluid p-5" style="max-width: 400px;">
+    <!-- Paragraphs, images and buttons -->
+    </div>
+    ```
 * Add a paragraph with shower tips.
 * Add a bathtub image and a small timer icon (`timer.png`).
 * Add a **Home** button linking back to `index.html`.
