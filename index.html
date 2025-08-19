@@ -18,8 +18,8 @@
         <div class="container-fluid p-5" style="max-width: 400px;">
             <div class="row">
               <div class="col text-center">
-                <h4>Water Conservation Tips</h4>
-                <p>
+                <h4 id="title">Water Conservation Tips</h4>
+                <p id="paragraph">
                     It's important that we all do our part to use less water. 
                     Click through this app for tips for conservation ideas.
                 </p>
@@ -38,13 +38,13 @@
             <div class="row mt-4">
               <!-- Language Buttons -->
                 <div class="col">
-                    <button class="btn btn-primary btn-sm w-100 rounded-0">Spanish</button>
-                    <button class="btn btn-primary btn-sm w-100 rounded-0">English</button>
+                    <button  class="btn btn-primary btn-sm w-100 rounded-0" onclick="changeLanguage('es')">Spanish</button>
+                    <button  class="btn btn-primary btn-sm w-100 rounded-0" onclick="changeLanguage('en')">English</button>
                 </div>
 
                 <!-- Next Button -->
                 <div class="col text-end">
-                  <a href="faucet.html" class="btn btn-success btn-sm rounded-0">Next</a>
+                  <a href="faucet.html" id="next-btn" class="btn btn-success btn-sm rounded-0">Next</a>
                 </div>
             </div>
         </div>
