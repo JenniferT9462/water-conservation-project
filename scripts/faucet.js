@@ -48,7 +48,7 @@ function selectGlass() {
   fill.style.transition = "height 1s ease-in";
 
   // Set droplets position relative to faucet
-  droplets.style.top = "400px"; // Adjust this value to align droplets under the faucet
+  droplets.style.top = "420px"; // Adjust this value to align droplets under the faucet
   droplets.style.left = "48%";
   droplets.style.transform = "translateX(-50%)";
   // droplets.style.transition = "top 1s ease-in"; // Transition for dripping
