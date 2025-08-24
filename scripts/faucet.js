@@ -32,8 +32,7 @@ function selectGlass() {
   fill.style.position = "absolute";
   droplets.style.position = "absolute"
 
-  // Animate the bottle to the faucet's position
-  // glassBottle.style.transition = "all 1s ease-in-out";
+
 
   // Position the glass bottle under the faucet
   // These values are relative to the faucet's container
@@ -65,7 +64,6 @@ function selectPlastic() {
   feedback.textContent = "Wrong choice!";
   feedback.style.color = "red";
   overlay.hidden = false;
-  // plasticBottle.style.display = "block";
   glassSelected = false;
   fillLevel = 0;
   fill.style.height = "0";
