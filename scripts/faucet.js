@@ -16,6 +16,11 @@ let fillLevel = 0;
 // Select Glass Bottle
 function selectGlass() {
   console.log("Glass Bottle Image Clicked");
+
+  const audio = new Audio('images/glass-bottle.mp3');
+  audio.play();
+
+  
   feedback.textContent = "Glass bottle selected!";
   feedback.style.color = "green";
   overlay.hidden = true;
@@ -64,12 +69,17 @@ function selectPlastic() {
   glassSelected = false;
   fillLevel = 0;
   fill.style.height = "0";
+  const audio = new Audio('images/plastic-bottle.mp3')
+  audio.play();
 }
 // Click Faucet
 function clickFaucet() {
   console.log("Faucet Image Clicked");
+  
 
   if (glassSelected) {
+    const audio = new Audio('images/water-drip.mp3');
+    audio.play();
     // Show the droplets by removing the 'hidden' attribute
     drips.forEach(drip => {
         drip.hidden = false;
