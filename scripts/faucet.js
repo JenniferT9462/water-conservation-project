@@ -4,10 +4,12 @@ let score = 0;
 
 onEvent("glass-bottle", "click", function() {
   console.log("Glass Bottle Clicked");
+  setProperty("overlay", "display", "none"); // reset
   const glassBottle = document.getElementById("glass-bottle");
   glassBottle.style.position = 'absolute';
   glassBottle.style.left = '46%';
-  glassBottle.style.bottom = '-120px';
+  // Get Glass bottle to right under the spout
+  glassBottle.style.bottom = '-200px';
   glassBottle.style.transform = "translateX(-50%)"; 
   score = score + 1;
   setText("scoreLabel", score);
@@ -15,18 +17,21 @@ onEvent("glass-bottle", "click", function() {
 
 onEvent("plastic-bottle", "click", function() {
   console.log("Plastic bottle clicked");
-  setImageURL("plastic-bottle", "images/plastic-bottle.png");
+  
+  setProperty("overlay", "display", "block");
+
   score = score - 1;
-  playSound("images/plastic-bottle.mp3");
+  playSound("assets/plastic-bottle.mp3");
   setText("scoreLabel", score);
 });
 
 onEvent("faucet", "click", function() {
   console.log("Faucet Clicked!");
+  setProperty("overlay", "display", "none"); // reset
   setProperty("glass-bottle", "background-color", "skyblue");
   // setImageURL("droplets", "drip.png");
   
-  playSound("images/water-drip.mp3", false);
+  playSound("assets/water-drip.mp3", false);
 
 });
 

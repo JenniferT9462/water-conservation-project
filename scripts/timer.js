@@ -3,14 +3,14 @@ console.log("Hello from timer.js!");
 //=======Code.org=======
 onEvent("timer", "click", function() {
     console.log("Timer clicked");
-    setImageURL("timer", "images/zerotimer.png");
-    setImageURL("bathtub", "images/rubber-ducky.png");
-    playSound("images/timer.mp3", false);
+    setImageURL("timer", "assets/zerotimer.png");
+    setImageURL("bathtub", "assets/rubber-ducky.png");
+    playSound("assets/timer.mp3", false);
 });
 
 onEvent("bathtub", "click", function() {
     console.log("Bathtub clicked!");
-    playSound("images/bathtub.mp3", false);
+    playSound("assets/bathtub.mp3", false);
 })
 
 
