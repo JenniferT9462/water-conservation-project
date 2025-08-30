@@ -1,21 +1,44 @@
+console.log("Hello from timer.js!");
+
+//=======Code.org=======
+onEvent("timer", "click", function() {
+    console.log("Timer clicked");
+    setImageURL("timer", "images/zerotimer.png");
+    setImageURL("bathtub", "images/rubber-ducky.png");
+    playSound("images/timer.mp3", false);
+});
+
+onEvent("bathtub", "click", function() {
+    console.log("Bathtub clicked!");
+    playSound("images/bathtub.mp3", false);
+})
+
+
+
+//======JavaScript======
 // Get DOM elements
-const bathtub = document.getElementById("bathtub");
-const rubberDucky = document.getElementById("rubber-ducky");
-const timer = document.getElementById("timer");
-const zeroTimer = document.getElementById("zeroTimer");
+// const bathtub = document.getElementById("bathtub");
+// const rubberDucky = document.getElementById("rubber-ducky");
+// const timer = document.getElementById("timer");
+// const zeroTimer = document.getElementById("zeroTimer");
 
-function selectTimer() {
-    console.log("Timer button clicked!");
+// function clickBathtub() {
+//     const audio = new Audio('images/timer.mp3');
+//     audio.play();
+// }
 
-    // Make bathtub hidden and rubber ducky appear
-    bathtub.hidden = true;
-    rubberDucky. hidden = false;
-    timer.hidden = true;
-    zeroTimer.hidden = false;
+// function selectTimer() {
+//     console.log("Timer button clicked!");
 
-    // Play Audio
-    const audio = new Audio('images/bathtub.mp3');
-    audio.play();
+//     // Make bathtub hidden and rubber ducky appear
+//     bathtub.hidden = true;
+//     rubberDucky. hidden = false;
+//     timer.hidden = true;
+//     zeroTimer.hidden = false;
 
-}
+//     // Play Audio
+//     const audio = new Audio('images/bathtub.mp3');
+//     audio.play();
+
+// }
  
