@@ -16,6 +16,8 @@
       <!-- Description -->
       <div class="row mb-2">
         <div class="col text-center">
+          <div id="score">Score: </div>
+          <div id="scoreLabel">0</div>
           <p>
             Instead of buying disposable water bottles, use a refillable bottle.
             One use water bottles fill our landfills and trap valuable water.
@@ -42,8 +44,9 @@
             src="images/glass-bottle.png"
             alt="Picture of glass bottle"
             style="width: 80px; bottom: 0; left: 20px"
-            onClick="selectGlass()"
+           
           />
+           <!-- onClick="selectGlass()" -->
         </div>
 
         <!-- Plastic Bottle -->
@@ -54,62 +57,68 @@
             src="images/plastic-bottle.png"
             alt="Picture of plastic bottle"
             style="width: 80px"
-            onClick="selectPlastic()"
+            
           />
+          <!-- onClick="selectPlastic()" -->
           <img
             id="overlay"
             class="position-absolute top-0 start-0"
             src="images/no.gif"
             alt="A circle with a cross through it"
-            style="width: 80px"
-            hidden
+            style="width: 80px; display: none;"
+            
           />
+          <!-- hidden -->
         </div>
       </div>
 
       <!-- Faucet -->
-      <div className="row mb-auto">
+      <div class="row mb-auto">
         <div
-          className="col text-center position-relative"
+          class="col text-center position-relative"
           style="height: 400px"
         >
           
             <!-- TODO: Add onClick to faucet image -->
             <img
               id="faucet"
-              className="btn"
+              class="btn"
               src="images/faucet.png"
               alt="Picture of a water faucet"
-              style="width: 200px"
-              onClick="clickFaucet()"
+              style="width: 200px; position: absolute; top: 50px; left: 0px;"
+              
             />
+            <!-- onClick="clickFaucet()" -->
 
             <!-- Droplets container -->
             <div
               id="droplets"
-              className="position-absolute"
+              class="position-absolute"
             >
               <img
                 src="images/drip.png"
                 alt="Image of a drop of water"
-                style="width: 20px"
+                style="width: 20px; display: none;"
                 class="drips"
-                hidden
+               
               />
+               <!-- hidden -->
               <img
                 src="images/drip.png"
                 alt="Image of a drop of water"
-                style="width: 20px"
+                style="width: 20px; display: none;"
                 class="drips"
-                hidden
+               
               />
+               <!-- hidden -->
               <img
                 src="images/drip.png"
                 alt="Image of a drop of water"
-                style="width: 20px"
+                style="width: 20px; display: none;"
                 class="drips"
-                hidden
+                
               />
+              <!-- hidden -->
            
           </div>
 
