@@ -14,32 +14,31 @@ console.log("Hello from timer.js!");
 // });
 
 //======Refactoring======
+// Event for when the timer is clicked
 const timer = document.getElementById("timer");
-timer.addEventListener("click", function() {
-    console.log("Timer Clicked!");
-    const bathtub = document.getElementById("bathtub");
-    // Make bathtub hidden and rubber ducky appear
-    bathtub.hidden = true;
-    const rubberDucky = document.getElementById("rubber-ducky")
-    rubberDucky. hidden = false;
-    timer.hidden = true;
-    const zeroTimer = document.getElementById("zeroTimer");
-    zeroTimer.hidden = false;
+timer.addEventListener("click", function () {
+  console.log("Timer Clicked!");
+  const bathtub = document.getElementById("bathtub");
+  // Make bathtub hidden and rubber ducky appear
+  bathtub.hidden = true;
+  const rubberDucky = document.getElementById("rubber-ducky");
+  rubberDucky.hidden = false;
+  timer.hidden = true;
+  const zeroTimer = document.getElementById("zeroTimer");
+  zeroTimer.hidden = false;
 
-    // Play Audio
-    const audio = new Audio('assets/timer.mp3');
-    audio.play();
-
+  // Play Audio
+  const audio = new Audio("assets/timer.mp3");
+  audio.play();
 });
 
+// Event for when bathtub is clicked
 const bathTub = document.getElementsById("bathtub");
-bathTub.addEventListener("click", function() {
-    console.log("Bathtub Clicked");
-    const audio = new Audio("assets/bathtub.mp3");
-    audio.play();
-})
-
-
+bathTub.addEventListener("click", function () {
+  console.log("Bathtub Clicked");
+  const audio = new Audio("assets/bathtub.mp3");
+  audio.play();
+});
 
 //======JavaScript======
 // Get DOM elements
@@ -49,7 +48,7 @@ bathTub.addEventListener("click", function() {
 // const zeroTimer = document.getElementById("zeroTimer");
 
 // function clickBathtub() {
-//     const audio = new Audio('images/timer.mp3');
+//     const audio = new Audio('assets/timer.mp3');
 //     audio.play();
 // }
 
@@ -63,8 +62,7 @@ bathTub.addEventListener("click", function() {
 //     zeroTimer.hidden = false;
 
 //     // Play Audio
-//     const audio = new Audio('images/bathtub.mp3');
+//     const audio = new Audio('assets/bathtub.mp3');
 //     audio.play();
 
 // }
- 

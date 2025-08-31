@@ -38,15 +38,7 @@ if (paragraph) {
   paragraph.style.backgroundColor = "lightblue";
 }
 
-// onEvent("esBtn", "click", function () {
-//   console.log("Spanish button clicked");
-//   setText("title", "Consejos de Conservación de Agua");
-//   setText(
-//     "paragraph",
-//     "Es importante que todos hagamos nuestra parte para usar menos"
-//   );
-//   setText("next-btn", "Siguiente");
-// });
+//Event for the Spanish button
 const esBtn = document.getElementById("esBtn");
 esBtn.addEventListener("click", function () {
   console.log("Spanish Button Clicked!");
@@ -65,14 +57,7 @@ esBtn.addEventListener("click", function () {
   }
 });
 
-// onEvent("enBtn", "click", function () {
-//   console.log("English button clicked");
-//   setText("title", "Water Conservation Tips");
-//   setText(
-//     "paragraph",
-//     "It's important that we all do our part to use less water."
-//   );
-// });
+// Event for the English button
 const enBtn = document.getElementById("enBtn");
 enBtn.addEventListener("click", function () {
   console.log("English button clicked!");

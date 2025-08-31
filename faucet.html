@@ -16,7 +16,7 @@
       <!-- Description -->
       <div class="row mb-2">
         <div class="col text-center">
-          <div id="score">Score: </div>
+          <div id="score">Score:</div>
           <div id="scoreLabel">0</div>
           <p>
             Instead of buying disposable water bottles, use a refillable bottle.
@@ -43,10 +43,9 @@
             class="btn"
             src="assets/glass-bottle.png"
             alt="Picture of glass bottle"
-            style="width: 80px; bottom: 0; left: 20px"
-           
+            style="width: 80px"
+            onClick="selectGlass()"
           />
-           <!-- onClick="selectGlass()" -->
         </div>
 
         <!-- Plastic Bottle -->
@@ -57,72 +56,58 @@
             src="assets/plastic-bottle.png"
             alt="Picture of plastic bottle"
             style="width: 80px"
-            
+            onClick="selectPlastic()"
           />
-          <!-- onClick="selectPlastic()" -->
+
           <img
             id="overlay"
             class="position-absolute top-0 start-0"
             src="assets/no.gif"
             alt="A circle with a cross through it"
-            style="width: 80px; display: none;"
-            
+            style="width: 80px"
+            hidden
           />
-          <!-- hidden -->
         </div>
       </div>
 
       <!-- Faucet -->
       <div class="row mb-auto">
-        <div
-          class="col text-center position-relative"
-          style="height: 400px"
-        >
-          
-            <!-- TODO: Add onClick to faucet image -->
-            <img
-              id="faucet"
-              class="btn"
-              src="assets/faucet.png"
-              alt="Picture of a water faucet"
-              style="width: 200px; position: absolute; top: 50px; left: 0px;"
-              
-            />
-            <!-- onClick="clickFaucet()" -->
-
+        <div class="col position-relative" style="height: 400px">
+          <!-- TODO: Add onClick to faucet image -->
+          <img
+            id="faucet"
+            class="btn"
+            src="assets/faucet.png"
+            alt="Picture of a water faucet"
+            style="width: 200px"
+            onClick="clickFaucet()"
+          />
+          <!-- Container for selected bottle + overlays -->
+          <div id="bottle-zone" class="position-relative" style="height: 300px">
+            <!-- glass-bottle will be moved here in JS -->
+            <div id="fill"></div>
             <!-- Droplets container -->
-            <div
-              id="droplets"
-              class="position-absolute"
-            >
+            <div id="droplets" hidden>
               <img
                 src="assets/drip.png"
-                alt="Image of a drop of water"
-                style="width: 20px; display: none;"
                 class="drips"
-               
+                style="width: 20px"
+                hidden
               />
-               <!-- hidden -->
               <img
                 src="assets/drip.png"
-                alt="Image of a drop of water"
-                style="width: 20px; display: none;"
                 class="drips"
-               
+                style="width: 20px"
+                hidden
               />
-               <!-- hidden -->
               <img
                 src="assets/drip.png"
-                alt="Image of a drop of water"
-                style="width: 20px; display: none;"
                 class="drips"
-                
+                style="width: 20px"
+                hidden
               />
-              <!-- hidden -->
-           
+            </div>
           </div>
-
-          <div id="fill" class="position-absolute"></div>
         </div>
       </div>
 
