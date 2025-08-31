@@ -1,48 +1,158 @@
-// console.log("Hello from faucet.js!");
+console.log("Hello from faucet.js!");
 //========Code.org=========
+// let score = 0;
+
+// onEvent("glass-bottle", "click", function () {
+//   console.log("Glass Bottle Clicked");
+//   setProperty("overlay", "display", "none"); // reset
+//   const glassBottle = document.getElementById("glass-bottle");
+//   glassBottle.style.position = "absolute";
+//   glassBottle.style.left = "46%";
+//   // Get Glass bottle to right under the spout
+//   glassBottle.style.bottom = "-200px";
+//   glassBottle.style.transform = "translateX(-50%)";
+//   score = score + 1;
+//   setText("scoreLabel", score);
+// });
+
+// onEvent("plastic-bottle", "click", function () {
+//   console.log("Plastic bottle clicked");
+
+//   setProperty("overlay", "display", "block");
+
+//   score = score - 1;
+//   playSound("assets/plastic-bottle.mp3");
+//   setText("scoreLabel", score);
+// });
+
+// onEvent("faucet", "click", function () {
+//   console.log("Faucet Clicked!");
+//   setProperty("overlay", "display", "none"); // reset
+//   setProperty("glass-bottle", "background-color", "skyblue");
+//   // setImageURL("droplets", "drip.png");
+
+//   playSound("assets/water-drip.mp3", false);
+// });
+
+// setProperty("score", "font-size", "30px");
+// setProperty("score", "font-weight", "bold");
+// setProperty("score", "color", "blue");
+// setProperty("scoreLabel", "font-size", "24px");
+// setProperty("scoreLabel", "font-weight", "bold");
+// setProperty("scoreLabel", "color", "orange");
+
+//======Refactoring======
 let score = 0;
 
-onEvent("glass-bottle", "click", function() {
-  console.log("Glass Bottle Clicked");
-  setProperty("overlay", "display", "none"); // reset
-  const glassBottle = document.getElementById("glass-bottle");
-  glassBottle.style.position = 'absolute';
-  glassBottle.style.left = '46%';
+// onEvent("glass-bottle", "click", function() {
+//   console.log("Glass Bottle Clicked");
+//   setProperty("overlay", "display", "none"); // reset
+//   const glassBottle = document.getElementById("glass-bottle");
+//   glassBottle.style.position = 'absolute';
+//   glassBottle.style.left = '46%';
+//   // Get Glass bottle to right under the spout
+//   glassBottle.style.bottom = '-200px';
+//   glassBottle.style.transform = "translateX(-50%)";
+//   score = score + 1;
+//   setText("scoreLabel", score);
+// });
+const glassBottle = document.getElementById("glass-bottle");
+glassBottle.addEventListener("click", function () {
+  console.log("Glass Bottle clicked!");
+  // setProperty("overlay", "display", "none"); // reset
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.style.display = "none";
+  }
+  glassBottle.style.position = "absolute";
+  glassBottle.style.left = "46%";
   // Get Glass bottle to right under the spout
-  glassBottle.style.bottom = '-200px';
-  glassBottle.style.transform = "translateX(-50%)"; 
+  glassBottle.style.bottom = "-200px";
+  glassBottle.style.transform = "translateX(-50%)";
+
+  const audio = new Audio("assets/glass-bottle.mp3");
+  audio.play();
+
   score = score + 1;
-  setText("scoreLabel", score);
+  // setText("scoreLabel", score);
+  const scoreLabel = document.getElementById("scoreLabel");
+  if (scoreLabel) {
+    scoreLabel.textContent = score;
+  }
 });
 
-onEvent("plastic-bottle", "click", function() {
-  console.log("Plastic bottle clicked");
-  
-  setProperty("overlay", "display", "block");
+// onEvent("plastic-bottle", "click", function () {
+//   console.log("Plastic bottle clicked");
 
+//   setProperty("overlay", "display", "block");
+
+//   score = score - 1;
+//   playSound("assets/plastic-bottle.mp3");
+//   setText("scoreLabel", score);
+// });
+const plasticBottle = document.getElementById("plastic-bottle");
+plasticBottle.addEventListener("click", function () {
+  console.log("Plastic Bottle Clicked!");
+  // setProperty("overlay", "display", "block");
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.style.display = "block";
+  }
   score = score - 1;
-  playSound("assets/plastic-bottle.mp3");
-  setText("scoreLabel", score);
+  // playSound("assets/plastic-bottle.mp3");
+  const audio = new Audio("assets/plastic-bottle.mp3");
+  audio.play();
+  // setText("scoreLabel", score);
+  const scoreLabel = document.getElementById("scoreLabel");
+  if (scoreLabel) {
+    scoreLabel.textContent = score;
+  }
 });
 
-onEvent("faucet", "click", function() {
+// onEvent("faucet", "click", function () {
+//   console.log("Faucet Clicked!");
+//   setProperty("overlay", "display", "none"); // reset
+//   setProperty("glass-bottle", "background-color", "skyblue");
+//   // setImageURL("droplets", "drip.png");
+
+//   playSound("assets/water-drip.mp3", false);
+// });
+const faucet = document.getElementById("faucet");
+faucet.addEventListener("click", function () {
   console.log("Faucet Clicked!");
-  setProperty("overlay", "display", "none"); // reset
-  setProperty("glass-bottle", "background-color", "skyblue");
-  // setImageURL("droplets", "drip.png");
-  
-  playSound("assets/water-drip.mp3", false);
-
+  // setProperty("overlay", "display", "none"); // reset
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.style.display = "none";
+  }
+  //  setProperty("glass-bottle", "background-color", "skyblue");
+  const glassBottle = document.getElementById("glass-bottle");
+  if (glassBottle) {
+    glassBottle.style.backgroundColor = "skyblue";
+  }
+  // playSound("assets/water-drip.mp3", false);
+  const audio = new Audio("assets/water-drip.mp3");
+  audio.play();
 });
 
-
-
-setProperty("score", "font-size", "30px");
-setProperty("score", "font-weight", "bold");
-setProperty("score", "color", "blue");
-setProperty("scoreLabel", "font-size", "24px");
-setProperty("scoreLabel", "font-weight", "bold");
-setProperty("scoreLabel", "color", "orange");
+// setProperty("score", "font-size", "30px");
+const scoreDiv = document.getElementById("score");
+if (scoreDiv) {
+  scoreDiv.style.fontSize = "30px";
+  // setProperty("score", "font-weight", "bold");
+  scoreDiv.style.fontWeight = "bold";
+  // setProperty("score", "color", "blue");
+  scoreDiv.style.color = "blue";
+}
+// setProperty("scoreLabel", "font-size", "24px");
+const scoreLabel = document.getElementById("scoreLabel");
+if (scoreLabel) {
+  scoreLabel.style.fontSize = "24px";
+  // setProperty("scoreLabel", "font-weight", "bold");
+  scoreLabel.style.fontWeight = "bold";
+  // setProperty("scoreLabel", "color", "orange");
+  scoreLabel.style.color = "orange";
+};
 
 
 
@@ -68,7 +178,6 @@ setProperty("scoreLabel", "color", "orange");
 //   const audio = new Audio('images/glass-bottle.mp3');
 //   audio.play();
 
-  
 //   feedback.textContent = "Glass bottle selected!";
 //   feedback.style.color = "green";
 //   overlay.hidden = true;
@@ -79,8 +188,6 @@ setProperty("scoreLabel", "color", "orange");
 //   glassBottle.style.position = "absolute";
 //   fill.style.position = "absolute";
 //   droplets.style.position = "absolute"
-
-
 
 //   // Position the glass bottle under the faucet
 //   // These values are relative to the faucet's container
@@ -121,7 +228,6 @@ setProperty("scoreLabel", "color", "orange");
 // // Click Faucet
 // function clickFaucet() {
 //   console.log("Faucet Image Clicked");
-  
 
 //   if (glassSelected) {
 //     const audio = new Audio('images/water-drip.mp3');
@@ -132,7 +238,6 @@ setProperty("scoreLabel", "color", "orange");
 //         drip.style.display = "flex";
 //         drip.style.flexDirection = "column";
 //     })
-
 
 //     // Start the drip animation
 //     droplets.style.top = "420px"; // Adjust this value to drop the water into the bottle
@@ -162,4 +267,3 @@ setProperty("scoreLabel", "color", "orange");
 //     feedback.style.color = "red";
 //   }
 // }
-
