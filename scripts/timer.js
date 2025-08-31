@@ -1,16 +1,42 @@
 console.log("Hello from timer.js!");
 
 //=======Code.org=======
-onEvent("timer", "click", function() {
-    console.log("Timer clicked");
-    setImageURL("timer", "assets/zerotimer.png");
-    setImageURL("bathtub", "assets/rubber-ducky.png");
-    playSound("assets/timer.mp3", false);
+// onEvent("timer", "click", function() {
+//     console.log("Timer clicked");
+//     setImageURL("timer", "assets/zerotimer.png");
+//     setImageURL("bathtub", "assets/rubber-ducky.png");
+//     playSound("assets/timer.mp3", false);
+// });
+
+// onEvent("bathtub", "click", function() {
+//     console.log("Bathtub clicked!");
+//     playSound("assets/bathtub.mp3", false);
+// });
+
+//======Refactoring======
+const timer = document.getElementById("timer");
+timer.addEventListener("click", function() {
+    console.log("Timer Clicked!");
+    const bathtub = document.getElementById("bathtub");
+    // Make bathtub hidden and rubber ducky appear
+    bathtub.hidden = true;
+    const rubberDucky = document.getElementById("rubber-ducky")
+    rubberDucky. hidden = false;
+    timer.hidden = true;
+    const zeroTimer = document.getElementById("zeroTimer");
+    zeroTimer.hidden = false;
+
+    // Play Audio
+    const audio = new Audio('assets/timer.mp3');
+    audio.play();
+
 });
 
-onEvent("bathtub", "click", function() {
-    console.log("Bathtub clicked!");
-    playSound("assets/bathtub.mp3", false);
+const bathTub = document.getElementsById("bathtub");
+bathTub.addEventListener("click", function() {
+    console.log("Bathtub Clicked");
+    const audio = new Audio("assets/bathtub.mp3");
+    audio.play();
 })
 
 
