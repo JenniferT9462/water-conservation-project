@@ -10,7 +10,7 @@ This guide shows how to create a simple multi-page site that teaches water conse
 
 * Create a folder named `water-conservation-project`.
 * Inside, create these HTML files: `index.html`, `faucet.html`, `timer.html`.
-* Add an `images/` folder and place all your images there:
+* Add an `assets/` folder and place all your images there:
 
   * `water-glass.jpg`
   * `bathtub.jpg`
@@ -147,22 +147,135 @@ This guide shows how to create a simple multi-page site that teaches water conse
 
 ---
 
-## Part 2: Adding Interactivity (Optional)
+## Part 2: Adding Interactivity
+- Be sure to copy `helpers.js` file and paste into your `helpers.js` file. 
+- Add script tags to your HTML pages at the bottom before the `</body>` tag:
+  ```html
+  <script src= "helpers.js"></script>
+  ```
+- For each page add it's script tag, For example, for the `index.html` file add:
+  ```html
+  <script src= "index.js"></script>
+  ```
+  * Be sure to do this below the `helpers.js` script tags and for each page. Make sure the file names make their script file. 
 
 ### 1. Language toggle on Home
 
-* Use JavaScript to change heading and paragraph text when clicking **Spanish** or **English** buttons.
-
+* Use JavaScript to change heading, paragraph and next button text when clicking **Spanish** or **English** buttons.
+* Create a file named `index.js`.
+* First you can set properties for your title and paragraph elements.:
+  ```js
+  setProperty("title", "color", "navy");
+  setProperty("paragraph", "background-color", "lightblue");setProperty("ptag", "padding", "10px");
+  ```
+* Now we can add our onEvents for the "Spanish" button. To switch the languages from english to Spanish:
+  ```js
+  onEvent("esBtn", "click", function () {
+    console.log("Spanish button clicked");
+    setText("title", "Consejos de Conservación de Agua");
+    setText(
+      "paragraph",
+      "Es importante que todos hagamos nuestra parte para usar menos"
+   );
+   setText("next-btn", "Siguiente");
+  });
+  ```
+  - Check in you HTML file that the "ids" for you language buttons match for your `onEvent`
+*  Now we can add our onEvents for the "English" button. To switch the languages from Spanish to English:
+  ```js
+  onEvent("enBtn", "click", function () {
+    console.log("English button clicked");
+    setText("title", "Water Conservation Tips");
+    setText(
+    "paragraph",
+    "It's important that we all do our part to use less water."
+    );
+  });
+  ```
 ### 2. Bottle selection on `faucet.html`
-
-* Clicking **glass bottle** can show a success message.
-* Clicking **plastic bottle** can show a warning.
-* Clicking the faucet can give feedback depending on the selection.
+* Create a file named `faucet.js`.
+* Add script tags to the HTML file under the `helpers.js` script tag:
+  ```html
+  <script src="faucet.js"></script>
+  ```
+* Inside `faucet.js` add your onEvents to display feedback if `glass-bottle` is clicked, And move the bottle to the faucet spout. We can achieve this with position property. 
+* Clicking **glass bottle**:
+  ```js
+  onEvent("glass-bottle", "click", function () {
+    console.log("Glass Bottle Clicked");
+    setProperty("overlay", "display", "none"); // reset
+    //Get glass bottle element
+    const glassBottle = document.getElementById("glass-bottle");
+    //Positioning to get the glass bottle to move to the faucet
+    glassBottle.style.position = "absolute";
+    glassBottle.style.left = "46%";
+   // Get Glass bottle to right under the spout
+    glassBottle.style.bottom = "-200px";
+    glassBottle.style.transform = "translateX(-50%)";
+    // Feedback for right choice
+    setProperty("feedback", "color", "green")
+    setText("feedback", "You choose correct!");
+    //Updating score
+    score = score + 1;
+    setText("scoreLabel", score);
+    //Play correct choice ding sound
+    playSound("assets/glass-bottle.mp3");     
+    });
+    ```
+* We want the `plastic-bottle` to have a overlay image over the bottle of a circle crossed out and a wrong choice feedback. As well as a sound indicating that they made a wrong choice. 
+* Clicking **plastic bottle**:
+  ```js
+  onEvent("plastic-bottle", "click", function () {
+       console.log("Plastic bottle clicked");
+       // Circle with cross thru it over plastic bottle
+       setProperty("overlay", "display", "block");
+       // Warning message
+       setProperty("feedback", "color", "red");
+       setText("feedback", "wrong Choice, try again!");
+       score = score - 1;
+       setText("scoreLabel", score);
+       playSound("assets/plastic-bottle.mp3");
+       
+     });
+* Clicking the faucet will have a dripping sound and the `glass-bottle` will have a fill background: 
+  ```js
+  onEvent("faucet", "click", function () {
+    console.log("Faucet Clicked!");
+    setProperty("overlay", "display", "none"); // reset
+    //Fill glass bottle
+    setProperty("glass-bottle", "background-color", "skyblue");
+    playSound("assets/water-drip.mp3", false);
+  });
+* Set property for Scoreboard:
+  ```js
+  setProperty("score", "font-size", "30px");
+  setProperty("score", "font-weight", "bold");
+  setProperty("score", "color", "blue");
+  setProperty("scoreLabel", "font-size", "24px");
+  setProperty("scoreLabel", "font-weight", "bold");
+  setProperty("scoreLabel", "color", "orange");
+  ```
 
 ### 3. Shower timer on `timer.html`
-
-* Clicking the timer icon starts a simple countdown (e.g., 5 minutes).
-* Display remaining time and show a message when the timer ends.
+* Create a file named `timer.js`.
+* Add script tags to the HTML file under the `helpers.js` script tag:
+  ```html
+  <script src="timer.js"></script>
+  ```
+* Clicking the timer icon displays a timer that is at zero, and change the bathtub to a rubber ducky. Also, play a buzzer sound: 
+  ```js
+  onEvent("timer", "click", function() {
+     console.log("Timer clicked");
+     setImageURL("timer", "assets/zerotimer.png");
+     setImageURL("bathtub", "assets/rubber-ducky.png");
+    playSound("assets/timer.mp3", false);
+   });
+* Play water sound when clicking on the bathtub:
+  ```js
+  onEvent("bathtub", "click", function() {
+     console.log("Bathtub clicked!");
+     playSound("assets/bathtub.mp3", false);
+   });
 
 > JavaScript can be added in `<script>` tags at the bottom of each page or in a separate `script.js` file.
 

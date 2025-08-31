@@ -11,6 +11,8 @@ console.log("Hello from faucet.js!");
 //   // Get Glass bottle to right under the spout
 //   glassBottle.style.bottom = "-200px";
 //   glassBottle.style.transform = "translateX(-50%)";
+//   setProperty("feedback", "color", "green")
+//   setText("feedback", "You choose correct!");
 //   score = score + 1;
 //   setText("scoreLabel", score);
 // });
@@ -19,7 +21,8 @@ console.log("Hello from faucet.js!");
 //   console.log("Plastic bottle clicked");
 
 //   setProperty("overlay", "display", "block");
-
+//   setProperty("feedback", "color", "red")
+//   setText("feedback", "wrong Choice, try again!");
 //   score = score - 1;
 //   playSound("assets/plastic-bottle.mp3");
 //   setText("scoreLabel", score);
@@ -70,6 +73,12 @@ glassBottle.addEventListener("click", function () {
   glassBottle.style.bottom = "-200px";
   glassBottle.style.transform = "translateX(-50%)";
 
+  const feedback = document.getElementById("feedback");
+  if (feedback) {
+    feedback.textContent = "You choose correct!";
+    feedback.style.color = "green";
+  }
+
   const audio = new Audio("assets/glass-bottle.mp3");
   audio.play();
 
@@ -97,6 +106,12 @@ plasticBottle.addEventListener("click", function () {
   const overlay = document.getElementById("overlay");
   if (overlay) {
     overlay.style.display = "block";
+  }
+
+  const feedback = document.getElementById("feedback");
+  if (feedback) {
+    feedback.textContent = "Wrong Choice, try again!";
+    feedback.style.color = "red";
   }
   score = score - 1;
   // playSound("assets/plastic-bottle.mp3");
@@ -130,6 +145,8 @@ faucet.addEventListener("click", function () {
   if (glassBottle) {
     glassBottle.style.backgroundColor = "skyblue";
   }
+
+  
   // playSound("assets/water-drip.mp3", false);
   const audio = new Audio("assets/water-drip.mp3");
   audio.play();
@@ -152,9 +169,7 @@ if (scoreLabel) {
   scoreLabel.style.fontWeight = "bold";
   // setProperty("scoreLabel", "color", "orange");
   scoreLabel.style.color = "orange";
-};
-
-
+}
 
 //======JavaScript======
 
