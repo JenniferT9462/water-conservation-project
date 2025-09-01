@@ -33,17 +33,17 @@
       </div>
 
       <!-- Bottles row -->
-      <div class="row justify-content-end mb-3">
+      <div class="row justify-content-end mb-3 position-relative" style="height: 150px;">
         <div class="col-auto">
           <div id="feedback" className="text-start"></div>
-          <!--TODO: Add onClicks to  bottle images -->
+         
           <!-- Glass Bottle -->
           <img
             id="glass-bottle"
             class="btn"
             src="assets/glass-bottle.png"
             alt="Picture of glass bottle"
-            style="width: 80px; bottom: 0; left: 20px"
+            style="width: 80px;"
            
           />
            <!-- onClick="selectGlass()" -->
@@ -62,10 +62,10 @@
           <!-- onClick="selectPlastic()" -->
           <img
             id="overlay"
-            class="position-absolute top-0 start-0"
+            
             src="assets/no.gif"
-            alt="A circle with a cross through it"
-            style="width: 80px; display: none;"
+            alt="Wrong Choice overlay"
+            style="width: 80px; display: none; position: absolute;"
             
           />
           <!-- hidden -->
@@ -75,7 +75,7 @@
       <!-- Faucet -->
       <div class="row mb-auto">
         <div
-          class="col text-center position-relative"
+          class="col position-relative"
           style="height: 400px"
         >
           
@@ -85,7 +85,7 @@
               class="btn"
               src="assets/faucet.png"
               alt="Picture of a water faucet"
-              style="width: 200px; position: absolute; top: 50px; left: 0px;"
+              style="width: 200px;"
               
             />
             <!-- onClick="clickFaucet()" -->
@@ -122,7 +122,7 @@
            
           </div>
 
-          <div id="fill" class="position-absolute"></div>
+          <div id="fill"></div>
         </div>
       </div>
 
